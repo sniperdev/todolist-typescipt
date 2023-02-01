@@ -5,7 +5,7 @@ import SingleTodo from "./SingleTodo";
 const TodoList = () => {
   const { todos } = useContext(TodoContext);
   return (
-    <section>
+    <section className="h-5/6 overflow-y-auto">
       {todos.map((todo) => (
         <SingleTodo
           key={todo.id}
