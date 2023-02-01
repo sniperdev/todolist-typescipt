@@ -1,6 +1,7 @@
 import Heading from "./components/Heading";
 import InputTodo from "./components/InputTodo";
 import { TodoProvider } from "./context/TodoContext";
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <TodoProvider>
           <Heading title={"Todo App"} />
           <InputTodo />
+          <TodoList />
         </TodoProvider>
       </section>
     </div>

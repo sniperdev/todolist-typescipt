@@ -5,7 +5,10 @@ interface TodoContext {
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 }
 
-export const TodoContext = createContext<TodoContext | null>(null);
+export const TodoContext = createContext<TodoContext>({
+  todos: [],
+  setTodos: () => {},
+});
 
 interface Children {
   children: JSX.Element[];
