@@ -2,14 +2,14 @@ import React, { useContext, useRef, useState } from "react";
 import { TodoContext } from "../context/TodoContext";
 const InputTodo = () => {
   const [todo, setTodo] = useState("");
-  const contextValue = useContext(TodoContext);
+  const { todos, setTodos } = useContext(TodoContext);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (todo) {
-      contextValue?.setTodos([
-        ...contextValue.todos,
-        { id: contextValue.todos?.length, title: todo, completed: false },
+      setTodos([
+        ...todos,
+        { id: todos?.length, title: todo, completed: false },
       ]);
       setTodo("");
       inputRef.current?.blur();
