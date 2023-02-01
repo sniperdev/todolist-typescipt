@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { TodoContext } from "../context/TodoContext";
 const InputTodo = () => {
   const [todo, setTodo] = useState("");
@@ -12,11 +12,14 @@ const InputTodo = () => {
         { id: contextValue.todos?.length, title: todo, completed: false },
       ]);
       setTodo("");
+      inputRef.current?.blur();
     }
   };
+  const inputRef = useRef<HTMLInputElement>(null);
   return (
     <form onSubmit={handleSubmit}>
       <input
+        ref={inputRef}
         placeholder="Write your task"
         onChange={(e) => setTodo(e.target.value)}
         value={todo}

@@ -23,9 +23,9 @@ const SingleTodo = ({ id, title, completed }: Props) => {
     setTodos(todos.filter((element) => element.id !== id));
   };
   return (
-    <div className="flex">
+    <div className="flex items-center h-10 border border-white">
       <input type="checkbox" checked={completed} onChange={setChecked} />
-      <h1>{title}</h1>
+      <h1 className="px-2">{title}</h1>
       <span onClick={handleDeleteTodo}>
         <BsFillTrashFill />
       </span>

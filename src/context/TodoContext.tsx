@@ -14,10 +14,7 @@ interface Children {
   children: JSX.Element[];
 }
 export const TodoProvider = ({ children }: Children) => {
-  const [todos, setTodos] = useState<Todo[]>([
-    { id: 1, title: "Create React App", completed: false },
-    { id: 2, title: "Change readme for project", completed: false },
-  ]);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   return (
     <TodoContext.Provider value={{ todos, setTodos }}>
