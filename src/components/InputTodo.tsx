@@ -11,6 +11,7 @@ const InputTodo = () => {
         ...contextValue.todos,
         { id: contextValue.todos?.length, title: todo, completed: false },
       ]);
+      setTodo("");
     }
   };
   return (
@@ -18,6 +19,7 @@ const InputTodo = () => {
       <input
         placeholder="Write your task"
         onChange={(e) => setTodo(e.target.value)}
+        value={todo}
         className="w-4/5 p-2 bg-black border-b-2 hover:border-b-gray-500 focus:outline-none focus:border-b-gray-500"
       />
       <button
