@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { TodoContext } from "../context/TodoContext";
 import { Todo } from "../module";
+import { BsFillTrashFill } from "react-icons/all";
 interface Props {
   id: number;
   title: string;
@@ -18,10 +19,16 @@ const SingleTodo = ({ id, title, completed }: Props) => {
       })
     );
   };
+  const handleDeleteTodo = () => {
+    setTodos(todos.filter((element) => element.id !== id));
+  };
   return (
     <div className="flex">
       <input type="checkbox" checked={completed} onChange={setChecked} />
       <h1>{title}</h1>
+      <span onClick={handleDeleteTodo}>
+        <BsFillTrashFill />
+      </span>
     </div>
   );
 };
